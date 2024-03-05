@@ -11,3 +11,5 @@ compileOnly 'org.projectlombok:lombok' , annotationProcessor 'org.projectlombok:
 implementation 'org.springframework.boot:spring-boot-devtools': ctrl+shift+F9으로 html만 재빌드
 
 테스트 생성: ctrl+shift+T
+
+줄 정렬: ctrl+alt+L
