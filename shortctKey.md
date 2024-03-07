@@ -13,3 +13,5 @@ implementation 'org.springframework.boot:spring-boot-devtools': ctrl+shift+F9으
 테스트 생성: ctrl+shift+T
 
 줄 정렬: ctrl+alt+L
+
+메소드 생성: ctrl + alt + M
