@@ -79,3 +79,5 @@ docker run --name springHello -p 8443:8443 spring:hello
 
 
 wsl에서는 window ip와 다르니 주의하자... 하... 리눅스에서 ifconfig로 ip찾아서 테스트하기
+
+build.gradle 우클릭 후 import gradle
