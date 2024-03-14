@@ -16,7 +16,7 @@ public class ItemRepository {
         if (item.getId() == null) {
             em.persist(item);
         } else {
-            em.merge(item);
+            em.merge(item); //모든 속성이 바뀌어 위험하니 merge는 되도록 쓰지 말고 변경감지를 사용하자 7번자료
         }
     }
 
