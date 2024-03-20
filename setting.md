@@ -22,24 +22,29 @@ logging.level.org.hibernate.orm.jdbc.bind = trace
 ## yml(h2)
 ```
 spring:
-datasource:
-  url: jdbc:h2:mem:testdb
-  username: sa
-  password:
-  driver-class-name: org.h2.Driver
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
 
   jpa:
     hibernate:
       ddl-auto: create-drop
     properties:
       hibernate:
-        show_sql: true
+#        show_sql: true
         format_sql: true
+        highlight_sql: true
     open-in-view: false
+
+  output:
+    ansi:
+      enabled: always
 
 logging:
   level:
     org.hibernate.SQL: debug
-    org.hibernate.type: trace
+    org.hibernate.orm.jdbc.bind: trace
 
 ```
