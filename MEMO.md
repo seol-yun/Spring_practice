@@ -1,5 +1,7 @@
 # MEMO 
 
+setting에서 빌드도구 gradle로 설정 후 실행하면 안텔리제이에서 도구 사용 가능
+
 fetch할때 json인지 text인지 명확하게 전달하기
 
 spring 3버전 이상부터는 스웨거 사용시  springdoc-openapi-ui 사용하기
