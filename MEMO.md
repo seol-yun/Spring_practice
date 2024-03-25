@@ -1,5 +1,7 @@
 # MEMO 
 
+h2에서 wsl은 ./h2.sh, cmd는 h2.bat
+
 setting에서 빌드도구 gradle로 설정 후 실행하면 안텔리제이에서 도구 사용 가능 
 
 fetch할때 json인지 text인지 명확하게 전달하기
