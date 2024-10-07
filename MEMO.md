@@ -1,20 +1,21 @@
 # MEMO 
 
+## h2 실행
 h2에서 wsl은 ./h2.sh, cmd는 h2.bat
 
+## gradle 빌드
 setting에서 빌드도구 gradle로 설정 후 실행하면 안텔리제이에서 도구 사용 가능 
 
+## 기타 팁
 fetch할때 json인지 text인지 명확하게 전달하기
 
 spring 3버전 이상부터는 스웨거 사용시  springdoc-openapi-ui 사용하기
 implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
 
-
 경로설정은 항상 application.properties에서
 
 Error parsing HTTP request header Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
 분명 http로 접속했는데 계속해서 생기는 오류 => 자바스크립트에서 https경로를 사용하였다. 주석처리되어있어도 안됨! 주석에 주의하자
-
 
 localhost가 아닌 ip 변경시 https로 접속 -> ssl 인증받아야함
 
@@ -29,7 +30,6 @@ server.ssl.key-store-type=PKCS12
 server.ssl.key-alias=key_test
 
 무조건 절대경로만 되는것같다.. 정정) classpath:keystore_test.p12 클래스패스로 가능 클래스패스는 application.properties의 경로
-
 
 
 jar파일 생성후 docker에 띄우기
