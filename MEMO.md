@@ -14,6 +14,8 @@ groupId: jpabook
 
 artifactId: jpashop
 
+스프링부트 3.0.x 버전은 그래들 자바 17아닌거 하면 충돌남
+
 ## h2 실행
 h2에서 wsl은 ./h2.sh, cmd는 h2.bat
 
