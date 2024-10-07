@@ -1,6 +1,9 @@
 # MEMO 
 
 ## 스프링 프로젝트 생성
+
+3.2.x
+
 스프링 부트 스타터(https://start.spring.io/)
 
 Project: **Gradle - Groovy** Project
