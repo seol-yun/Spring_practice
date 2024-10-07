@@ -1,5 +1,12 @@
 # MEMO 
 
+## 스프링 프로젝트 생성
+스프링 부트 스타터(https://start.spring.io/)
+Project: **Gradle - Groovy** Project
+사용 기능: web, thymeleaf, jpa, h2, lombok, validation 등등
+groupId: jpabook
+artifactId: jpashop
+
 ## h2 실행
 h2에서 wsl은 ./h2.sh, cmd는 h2.bat
 
