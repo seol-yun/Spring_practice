@@ -32,11 +32,14 @@ h2에서 wsl은 ./h2.sh, cmd는 h2.bat
 ## gradle 빌드
 setting에서 빌드도구 gradle로 설정 후 실행하면 안텔리제이에서 도구 사용 가능 
 
+## 스웨거
+spring 3버전 이상부터는 스웨거 사용시  springdoc-openapi-ui 사용하기
+implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
+
+
 ## 기타 팁
 fetch할때 json인지 text인지 명확하게 전달하기
 
-spring 3버전 이상부터는 스웨거 사용시  springdoc-openapi-ui 사용하기
-implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
 
 경로설정은 항상 application.properties에서
 
