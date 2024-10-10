@@ -16,6 +16,7 @@ artifactId: jpashop
 
 스프링부트 3.0.x 버전은 그래들 자바 17아닌거 하면 충돌남
 
+
 ## h2
 ### h2 파일 생성:
 
@@ -29,8 +30,10 @@ artifactId: jpashop
 
 h2에서 wsl은 ./h2.sh, cmd는 h2.bat
 
+
 ## gradle 빌드
 setting에서 빌드도구 gradle로 설정 후 실행하면 안텔리제이에서 도구 사용 가능 
+
 
 ## 스웨거
 spring 3버전 이상부터는 스웨거 사용시  springdoc-openapi-ui 사용하기
