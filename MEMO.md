@@ -38,7 +38,7 @@ setting에서 빌드도구 gradle로 설정 후 실행하면 안텔리제이에�
 ## 스웨거
 spring 3버전 이상부터는 스웨거 사용시  springdoc-openapi-ui 사용하기
 implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
-
+http://localhost:8080/swagger-ui/index.html로 접속
 
 ## 기타 팁
 fetch할때 json인지 text인지 명확하게 전달하기
