@@ -16,7 +16,18 @@ artifactId: jpashop
 
 스프링부트 3.0.x 버전은 그래들 자바 17아닌거 하면 충돌남
 
-## h2 실행
+## h2
+h2 생성:
+
+데이터베이스 파일 생성 방법
+
+`jdbc:h2:~/jpashop` (최소 한번)
+
+`~/jpashop.mv.db` 파일 생성 확인
+
+이후 부터는 `jdbc:h2:tcp://localhost/~/jpashop` 이렇게 접속
+
+h2 실행: 
 h2에서 wsl은 ./h2.sh, cmd는 h2.bat
 
 ## gradle 빌드
