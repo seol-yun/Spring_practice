@@ -46,6 +46,7 @@ http://localhost:8080/swagger-ui/index.html로 접속
 ## 도커
 jar파일 생성후 docker에 띄우기
 
+루트 디렉토리에서 ./gradlew build
 
 gradlew build 안될때 = 배포를 웨해 jar파일을 받아야하는데 빌드가 자꾸 안됐따.
 
@@ -72,10 +73,17 @@ SNAPSHOT.jar는 실행가능한 아카이브이고, SNAPSHOT-plain.jar는 실행
 
 도커파일 생성하고 빌드하면 도커가 자동으로 이미지를 빌드함
 
-//[Dockerfile]
-FROM openjdk:17
-ARG JAR_FILE=build/libs/hello-0.0.1-SNAPSHOT.jar
-COPY ${JAR_FILE} app.jar
+### [Dockerfile]
+```
+# 사용할 자바 버전
+FROM openjdk:17-jdk-slim
+
+# 애플리케이션 JAR 파일 경로 설정
+ADD /build/libs/*.jar app.jar
+
+# 애플리케이션 실행
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
+```
 
 ARG KEYSTORE_FILE=src/main/resources/keystore_test.p12
 COPY ${KEYSTORE_FILE} /keystore_test.p12
