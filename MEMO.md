@@ -42,30 +42,8 @@ implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
 
 http://localhost:8080/swagger-ui/index.html로 접속
 
-## 기타 팁
-fetch할때 json인지 text인지 명확하게 전달하기
 
-
-경로설정은 항상 application.properties에서
-
-Error parsing HTTP request header Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
-분명 http로 접속했는데 계속해서 생기는 오류 => 자바스크립트에서 https경로를 사용하였다. 주석처리되어있어도 안됨! 주석에 주의하자
-
-localhost가 아닌 ip 변경시 https로 접속 -> ssl 인증받아야함
-
-cmd에서 
-keytool -genkey -alias key_test -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore keystore_test.p12 -validity 4000
-
-server.address=192.168.0.21
-server.port=8443
-server.ssl.key-store= classpath:keystore_test.p12
-server.ssl.key-store-password=비번
-server.ssl.key-store-type=PKCS12
-server.ssl.key-alias=key_test
-
-무조건 절대경로만 되는것같다.. 정정) classpath:keystore_test.p12 클래스패스로 가능 클래스패스는 application.properties의 경로
-
-
+## 도커
 jar파일 생성후 docker에 띄우기
 
 
@@ -119,3 +97,30 @@ docker run --name springHello -p 8443:8443 spring:hello
 wsl에서는 window ip와 다르니 주의하자... 하... 리눅스에서 ifconfig로 ip찾아서 테스트하기
 
 build.gradle 우클릭 후 import gradle
+
+
+## 기타 팁
+fetch할때 json인지 text인지 명확하게 전달하기
+
+
+경로설정은 항상 application.properties에서
+
+Error parsing HTTP request header Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+분명 http로 접속했는데 계속해서 생기는 오류 => 자바스크립트에서 https경로를 사용하였다. 주석처리되어있어도 안됨! 주석에 주의하자
+
+localhost가 아닌 ip 변경시 https로 접속 -> ssl 인증받아야함
+
+cmd에서 
+keytool -genkey -alias key_test -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore keystore_test.p12 -validity 4000
+
+server.address=192.168.0.21
+server.port=8443
+server.ssl.key-store= classpath:keystore_test.p12
+server.ssl.key-store-password=비번
+server.ssl.key-store-type=PKCS12
+server.ssl.key-alias=key_test
+
+무조건 절대경로만 되는것같다.. 정정) classpath:keystore_test.p12 클래스패스로 가능 클래스패스는 application.properties의 경로
+
+
+
