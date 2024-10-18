@@ -46,7 +46,10 @@ http://localhost:8080/swagger-ui/index.html로 접속
 ## 도커
 jar파일 생성후 docker에 띄우기
 
-루트 디렉토리에서 ./gradlew build
+jar 생성: 루트 디렉토리에서 ./gradlew build
+
+jar 실행: java -jar app.jar
+
 
 gradlew build 안될때 = 배포를 웨해 jar파일을 받아야하는데 빌드가 자꾸 안됐따.
 
