@@ -21,19 +21,29 @@ logging.level.org.hibernate.orm.jdbc.bind = trace
 
 ## yml(h2)
 ```
+#server:
+#  ssl:
+#    key-store: classpath:keystore_test.p12
+#    key-store-password: qkqh321@
+#    key-store-type: PKCS12
+#    key-alias: key_test
+#  address: 192.168.56.1
+#  port: 8443
+
 spring:
   datasource:
-    url: jdbc:h2:mem:testdb
+    url: jdbc:h2:tcp://127.0.0.1/~/fitnessdb;
     username: sa
     password:
     driver-class-name: org.h2.Driver
 
   jpa:
     hibernate:
-      ddl-auto: create-drop
+#      ddl-auto: create
+      ddl-auto: none
     properties:
       hibernate:
-#        show_sql: true
+        #        show_sql: true
         format_sql: true
         highlight_sql: true
     open-in-view: false
@@ -42,10 +52,26 @@ spring:
     ansi:
       enabled: always
 
+#  servlet:
+#    encoding:
+#      charset : UTF-8
+#      force : true
+#      enabled : true
+#    session:
+#      tracking-modes: cookie
+
 logging:
   level:
     org.hibernate.SQL: debug
     org.hibernate.orm.jdbc.bind: trace
+#    org.springframework.messaging: trace
+#    org.springframework.web.socket: trace
+
+
+jwt:
+  secret: VlwEyVBsYt9V7zq57TejMnVUyzblYcfPQye08f7MGVA9XkHa
+  expiration: 86400000  # 24 hours in milliseconds
+
 
 ```
 
