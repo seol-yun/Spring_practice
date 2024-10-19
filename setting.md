@@ -80,20 +80,16 @@ jwt:
 ```
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '3.2.2'
-	id 'io.spring.dependency-management' version '1.1.4'
+	id 'org.springframework.boot' version '3.2.10'
+	id 'io.spring.dependency-management' version '1.1.6'
 }
 
-group = 'jpabook'
+group = 'loginserver'
 version = '0.0.1-SNAPSHOT'
 
 java {
-	sourceCompatibility = '17'
-}
-
-configurations {
-	compileOnly {
-		extendsFrom annotationProcessor
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
 	}
 }
 
@@ -102,50 +98,35 @@ repositories {
 }
 
 dependencies {
-//	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-//	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-//	implementation 'org.springframework.boot:spring-boot-starter-web'
-//	compileOnly 'org.projectlombok:lombok'
-//	annotationProcessor 'org.projectlombok:lombok'
-//	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-//	implementation 'com.oracle.database.jdbc:ojdbc10:19.8.0.0'
-
-
-//	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-//	implementation 'org.springframework.boot:spring-boot-starter-web'
-//	implementation 'org.springframework.boot:spring-boot-devtools'
-//	testImplementation ('org.springframework.boot:spring-boot-starter-test'){
-//		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-//	}
-//	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.2'
-//	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-////	implementation 'com.oracle.database.jdbc:ojdbc10:19.8.0.0'
-//	runtimeOnly 'com.h2database:h2'
-//	testImplementation 'junit:junit:4.13.1'
-//	compileOnly 'org.projectlombok:lombok'
-//	annotationProcessor 'org.projectlombok:lombok'
-//	implementation 'org.springframework.boot:spring-boot-starter-validation'
-//	//배포에서는 빼기
-//	implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.9.0'
-
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation 'org.springframework.boot:spring-boot-starter-validation' //배포에서는 삐기
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	compileOnly 'org.projectlombok:lombok'
+	implementation 'org.springframework.boot:spring-boot-starter-websocket'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.security:spring-security-crypto'
+	testImplementation 'org.springframework.security:spring-security-test'
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
+	implementation 'org.projectlombok:lombok'
 	runtimeOnly 'com.h2database:h2'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-//JUnit4 추가
-	testImplementation("org.junit.vintage:junit-vintage-engine") {
-		exclude group: "org.hamcrest", module: "hamcrest-core"
-	}
-
+	testImplementation 'org.junit.jupiter:junit-jupiter-api'
 	implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.9.0'
+
+	implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
+	runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
 }
 
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+// Add compiler arguments
+tasks.withType(JavaCompile) {
+	options.compilerArgs.addAll(['-parameters'])
+}
+
 
 ```
