@@ -46,7 +46,7 @@ http://localhost:8080/swagger-ui/index.html로 접속
 ## 도커
 jar파일 생성후 docker에 띄우기
 
-jar 생성: 루트 디렉토리에서 ./gradlew build
+jar 생성: 루트 디렉토리에서 cmd에서 gradlew build ->윈도우도 자바17로 맞춰야됨!
 
 jar 실행: java -jar app.jar
 
