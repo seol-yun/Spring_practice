@@ -48,7 +48,9 @@ http://localhost:8080/swagger-ui/index.html로 접속
 
 ## 도커(피트니스)
 docker run -d --name fitness-security -p 8082:8080 fitness-security
+
 docker run -d --name fitness-security -p 8081:8080 fitness-login
+
 docker run -d --name fitness-security -p 8080:8080 fitness-main
 
 ## 도커
