@@ -1,22 +1,14 @@
 # spring 설정
 
 
-## properties(Oracle)
+## yml(Oracle)
 ```
-server.address=localhost
-server.port=8081
-spring.datasource.url=jdbc:oracle:thin:@localhost:1521:xe
-spring.datasource.username=C##yun
-spring.datasource.password=1234
-spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
-##jpa
-spring.jpa.show-sql=true
-spring.jpa.properties.hibernate.format_sql=true
-spring.jpa.properties.hibernate.highlight_sql=true
-spring.jpa.hibernate.ddl-auto=none
-
-logging.level.org.hibernate.SQL=debug
-logging.level.org.hibernate.orm.jdbc.bind = trace
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@172.30.1.1:1521:xe
+    username: C##yunhwan
+    password: 1234
+    driver-class-name: oracle.jdbc.OracleDriver
 ```
 
 ## yml(h2)
