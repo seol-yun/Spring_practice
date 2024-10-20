@@ -49,9 +49,30 @@ http://localhost:8080/swagger-ui/index.html로 접속
 ## 도커(피트니스)
 docker run -d --name fitness-security -p 8082:8080 fitness-security
 
-docker run -d --name fitness-security -p 8081:8080 fitness-login
+docker run -d --name fitness-login -p 8081:8080 fitness-login
 
-docker run -d --name fitness-security -p 8080:8080 fitness-main
+docker run -d --name fitness-main -p 8080:8080 fitness-main
+
+
+docker pull jaspeen/oracle-xe-11g
+
+docker run --name oracleDB -d -p 8084:8080 -p 1522:1521 jaspeen/oracle-xe-11g
+
+docker exec -it oracleDB sqlplus
+
+아이디: system
+
+비번: oracle
+
+conn sys as sysdba
+
+create user C##yunhwan identified by 1234;
+
+grant connect, resource, dba to C##yunhwan;
+
+commit;
+
+select * from all_users;
 
 ## 도커
 jar파일 생성후 docker에 띄우기
