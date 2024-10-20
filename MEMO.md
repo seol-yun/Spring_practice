@@ -106,7 +106,7 @@ docker run --name springHello -p 8443:8443 spring:hello
 
 
 그래들 빌드 -> 도커 빌드 -> 도커 실행
-
+docker run -d --name fitness-security -p 8082:8080 fitness-security
 
 wsl에서는 window ip와 다르니 주의하자... 하... 리눅스에서 ifconfig로 ip찾아서 테스트하기
 
