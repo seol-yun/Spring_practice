@@ -79,6 +79,8 @@ jar파일 생성후 docker에 띄우기
 
 jar 생성: 루트 디렉토리에서 cmd에서 gradlew build ->윈도우도 자바17로 맞춰야됨!
 
+gradlew build --exclude-task test 
+
 jar 실행: build/libs로 이동 후 java -jar securityserver-0.0.1-SNAPSHOT.jar
 
 
