@@ -76,7 +76,7 @@ docker run -d --name fitness-security -p 8082:8080 fitness-security
 
 docker run -d --name fitness-login -p 8081:8080 fitness-login
 
-docker run -d --name fitness-main -p 8080:8080 fitness-main
+docker run -d -v C:/FitnessImage:/app/FitnessImage --name fitness-main -p 8080:8080 fitness-main
 
 
 
