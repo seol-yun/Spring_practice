@@ -66,18 +66,22 @@ select * from all_users;
 
 connect 계정/비번;
 
-## 도커(피트니스)
+## 도커(피트니스 네트워크)
 
 docker build -t fitness-main .
 
 
 
-docker run -d --name fitness-security -p 8082:8080 fitness-security
+docker network create --subnet=172.18.0.0/16 fitness-net
 
-docker run -d --name fitness-login -p 8081:8080 fitness-login
 
-docker run -d -v C:/FitnessImage:/app/FitnessImage --name fitness-main -p 8080:8080 fitness-main
+docker run -d --name fitness-security -p 8082:8080 --net fitness-net --ip 172.18.0.3 fitness-security
 
+docker run -d --name fitness-login -p 8081:8080 --net fitness-net --ip 172.18.0.3 fitness-login
+
+docker run -d -p 8080:8080 -v C:/FitnessImage:/app/FitnessImage --name fitness-main --net fitness-net --ip 172.18.0.2 fitness-main
+
+docker run -d --name oracleDB -d -p 8084:8080 -p 1522:1521 --net fitness-net --ip 172.18.0.5 jaspeen/oracle-xe-11g
 
 
 
