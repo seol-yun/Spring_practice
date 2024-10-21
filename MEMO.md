@@ -75,7 +75,7 @@ docker build -t fitness-main .
 docker network create --subnet=172.18.0.0/16 fitness-net
 
 
-docker run -d --name fitness-security -p 8082:8080 --net fitness-net --ip 172.18.0.3 fitness-security
+docker run -d --name fitness-security -p 8082:8080 --net fitness-net --ip 172.18.0.4 fitness-security
 
 docker run -d --name fitness-login -p 8081:8080 --net fitness-net --ip 172.18.0.3 fitness-login
 
