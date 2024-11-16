@@ -44,6 +44,9 @@ http://localhost:8080/swagger-ui/index.html로 접속
 
 
 ## 오라클
+
+*sqldeveploper d드라이브에있다...*
+
 docker pull jaspeen/oracle-xe-11g
 
 docker run --name oracleDB -d -p 8084:8080 -p 1522:1521 jaspeen/oracle-xe-11g
