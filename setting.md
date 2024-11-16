@@ -114,7 +114,8 @@ dependencies {
 	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
 	runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
 
-	implementation 'org.springframework.boot:spring-boot-starter-jdbc' //오라클
+	//오라클
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc' 
 	implementation 'com.oracle.database.jdbc:ojdbc10:19.8.0.0'
 }
 
