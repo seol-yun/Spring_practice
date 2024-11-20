@@ -21,6 +21,10 @@ spring:
         dialect: org.hibernate.dialect.MySQLDialect #mysql
     open-in-view: false
 ```
+```
+//mysql
+	runtimeOnly 'com.mysql:mysql-connector-j'
+```
 
 ## yml(Oracle)
 ```
