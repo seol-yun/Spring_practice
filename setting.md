@@ -1,5 +1,26 @@
 # spring 설정
 
+## yml(Mysql)
+```
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/schoolplanner
+    username: yunhwan
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+#      ddl-auto: none
+    properties:
+      hibernate:
+        #        show_sql: true
+        format_sql: true
+        highlight_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect #mysql
+    open-in-view: false
+```
 
 ## yml(Oracle)
 ```
