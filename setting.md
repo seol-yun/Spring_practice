@@ -150,3 +150,55 @@ tasks.named('test') {
 
 
 ```
+
+
+
+## Github Action
+```
+name: Deploy to AWS EC2
+
+on:
+  push:
+    branches:
+      - deploy  # deploy 브랜치에 푸시될 때만 실행
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 코드 체크아웃
+    - name: Check out the code
+      uses: actions/checkout@v3  # 최신 버전으로 업데이트
+
+    # Java 환경 설정
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3  # 최신 버전으로 업데이트
+      with:
+        java-version: '17'
+
+    # 프로젝트 빌드
+    - name: Build with Gradle
+      run: ./gradlew build
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+    - name: Deploy to EC2
+      uses: appleboy/ssh-action@v0.1.4
+      with:
+        host: ${{ secrets.EC2_HOST }}
+        username: ${{ secrets.EC2_USER }}
+        key: ${{ secrets.EC2_KEY }}
+        script: |
+          # 프로젝트 파일 전송
+          scp -i ${{ secrets.EC2_KEY }} -r ./build/libs/your-app.jar ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:/home/ubuntu/
+
+          # EC2에서 실행 중인 이전 프로세스 종료
+          pkill -f your-app.jar || true
+
+          # 새 앱 실행
+          nohup java -jar /home/ubuntu/your-app.jar > /dev/null 2>&1 &
+```
